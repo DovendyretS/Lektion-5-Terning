@@ -30,3 +30,4 @@ public class UseDice {
 		keyboard.close();            // Close the scanner
 	}
 }
+// hej drenge
