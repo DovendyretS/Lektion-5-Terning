@@ -1,15 +1,18 @@
 package terning;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 
 public class TestTheDice {
 
-	@Test
+	@RepeatedTest(100)
 	public void test() {
-		
-		sjdfksdf
+	Dice testDice = new Dice();
+	
+	int roll = testDice.roll();
+	
+	assertTrue(roll<= 6 && roll >= 1);
 		
 	}
 
