@@ -1,10 +1,12 @@
-package terning;
+package jUnitTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.*;
 
-public class TestTheDice {
+import terning.Dice;
+
+public class TestDiceRoll {
 
 	@RepeatedTest(100)
 	public void test() {
