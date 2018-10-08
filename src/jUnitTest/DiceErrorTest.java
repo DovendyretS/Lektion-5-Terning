@@ -8,10 +8,14 @@ import terning.Dice;
 
 public class DiceErrorTest {
 
-	@Test
+	@RepeatedTest(30)
 	public void test() {
 		Dice testDice = new Dice();
-		int roll = testDice.roll();
+		final int totalRolls = 60000;
+		final int lowRolls = (int)((totalRolls / 6) * 0.96);
+		final int highRolls = (int)((totalRolls / 6) * 1.04);
+		
+		int roll;
 		int et = 0;
 		int to = 0;
 		int tre = 0;
@@ -19,8 +23,9 @@ public class DiceErrorTest {
 		int fem = 0;
 		int seks = 0;
 
-        for (int i=0; i<60000; i++){
-            switch (roll){
+        for (int i=0; i< totalRolls; i++){
+        	roll = testDice.roll();
+        	switch (roll){
                 case 1:
                     et++;
                     break;
@@ -40,9 +45,14 @@ public class DiceErrorTest {
                     seks++;
                     break;
             }
-
         }
-
+        
+        assertTrue(lowRolls <= et && et <= highRolls, "fejl ved et der var " + et + " ettere");
+        assertTrue(lowRolls <= to && to <= highRolls, "fejl ved to der var " + to + " ettere");
+        assertTrue(lowRolls <= tre && tre <= highRolls, "fejl ved tre der var " + tre + " ettere");
+        assertTrue(lowRolls <= fire && fire <= highRolls, "fejl ved fire der var " + fire + " ettere");
+        assertTrue(lowRolls <= fem && fem <= highRolls, "fejl ved fem der var " + fem + " ettere");
+        assertTrue(lowRolls <= seks && seks <= highRolls, "fejl ved seks der var " + seks + " ettere");
 	}
 
 }
