@@ -48,11 +48,10 @@ public class DiceErrorTest {
         }
         
         assertTrue(lowRolls <= et && et <= highRolls, "fejl ved et der var " + et + " ettere");
-        assertTrue(lowRolls <= to && to <= highRolls, "fejl ved to der var " + to + " ettere");
+        assertTrue(lowRolls <= to && to <= highRolls, "fejl ved to der var " + to + " toere");
         assertTrue(lowRolls <= tre && tre <= highRolls, "fejl ved tre der var " + tre + " ettere");
         assertTrue(lowRolls <= fire && fire <= highRolls, "fejl ved fire der var " + fire + " ettere");
         assertTrue(lowRolls <= fem && fem <= highRolls, "fejl ved fem der var " + fem + " ettere");
         assertTrue(lowRolls <= seks && seks <= highRolls, "fejl ved seks der var " + seks + " ettere");
 	}
-
 }
